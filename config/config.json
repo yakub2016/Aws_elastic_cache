@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "Yakub@1998",
     "database": "aws",
     "host": "127.0.0.1",
     "dialect": "mysql"
