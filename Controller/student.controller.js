@@ -1,3 +1,4 @@
+const redisClient = require("../lib/redis");
 const { Student } = require("../models");
 
 // Create
