@@ -106,3 +106,34 @@ exports.deleteStudent = async (req, res) => {
     });
   }
 };
+
+exports.getStudentsWithRedis = async (req, res) => {
+  try {
+    const cacheKey = "students";
+
+    const cachedStudents = await redisClient.get(cacheKey);
+
+    if (cachedStudents) {
+      return res.json({
+        success: true,
+        source: "redis",
+        data: JSON.parse(cachedStudents),
+      });
+    }
+
+    const students = await Student.findAll();
+
+    await redisClient.setEx(cacheKey, 3600, JSON.stringify(students));
+
+    res.json({
+      success: true,
+      source: "database",
+      data: students,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message,
+    });
+  }
+};

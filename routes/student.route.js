@@ -6,6 +6,7 @@ const studentController = require("../Controller/student.controller");
 router.post("/", studentController.createStudent);
 
 router.get("/", studentController.getStudents);
+router.get("/redis", studentController.getStudentsWithRedis);
 
 router.get("/:id", studentController.getStudent);
 
