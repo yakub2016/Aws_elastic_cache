@@ -8,18 +8,18 @@ const app = express();
 app.use(express.json());
 
 // Connect to Redis when the server starts
-(async () => {
-  try {
-    await redisClient.connect();
+// (async () => {
+//   try {
+//     await redisClient.connect();
 
-    console.log("✅ Redis Connected");
+//     console.log("✅ Redis Connected");
 
-    const pong = await redisClient.ping();
-    console.log("🏓 Redis Ping:", pong);
-  } catch (err) {
-    console.error("❌ Redis Connection Failed:", err);
-  }
-})();
+//     const pong = await redisClient.ping();
+//     console.log("🏓 Redis Ping:", pong);
+//   } catch (err) {
+//     console.error("❌ Redis Connection Failed:", err);
+//   }
+// })();
 
 // Home Route
 app.get("/", (req, res) => {
