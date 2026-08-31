@@ -1,7 +1,7 @@
 require("dotenv").config();
 
 const express = require("express");
-const redisClient = require("./lib/redis");
+// const redisClient = require("./lib/redis");
 
 const app = express();
 
