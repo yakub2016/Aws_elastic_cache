@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "root",
+     "username": "admin",
     "password": "Yakub@1998",
     "database": "aws",
-    "host": "127.0.0.1",
+    "host": "aws.c2lqqyei4s3c.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   },
   "test": {
@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
+    "username": "admin",
     "password": "Yakub@1998",
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "database": "aws",
+    "host": "aws.c2lqqyei4s3c.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
   }
 }
